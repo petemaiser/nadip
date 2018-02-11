@@ -1,0 +1,47 @@
+The "nadip" command line tool enables the user to copy all the settings from a NAD processor or
+receiver into a setting file that can then be sent to another processor.  Or the setting file
+can be used a backup.  A single command can also be sent on the command-line.
+
+Usage:  
+	nadip [-p <put file>] [-s <settings file] [-l <log file>] <IP> <port> [<command string>]
+
+	-p	Option to put all the commands to the server from the put file.
+		Note that a line that starts with '#' is skipped
+		Except '#!', which is a put file command.
+
+		Supported '#!' commands are:
+
+			  #!p<milliseconds>	pause for the given milliseconds,
+						e.g. "#!500" pauses for half a second
+
+	-s	Option to turn the responses into a settings file.  NAD responses like
+		"Main.Power=On" can be sent as commands, so the settings option simple takes the
+		responses from a command or put file and saves them to the settings file.  Note
+		that put file commands like '#!p' are moved over to the settings file.  The 's'
+		option must be run with the 'p' option OR with a single command sent as an
+		argument.  The log file records for 1 second after nadip has sent its last command.
+		Responses that are not settings are skipped:
+
+			Main.Model			Main.Version			Main.Serial
+
+	-l	Option for all received commands to be written to a log file.  The log file is
+		different from settings file in that it logs everything received from the
+		processor, no more, no less.  The log file records for 1 second after nadip has sent
+		its last command.
+
+	<IP>	The IP address, e.g. "10.0.1.10" is the first argument and must be supplied
+
+	<Port>	The port number, e.g. '4999' is the second argument and must be supplied
+
+	<command string>
+		An optional command string will be sent to the processor.  If a put file is also
+		included the put file commands will be run first.
+
+
+This program is comes with NO WARRANTY and is a beta version.  You use it at your own risk.
+Copyright (C) 2018 Pete Maiser.
+  
+Release Updates:
+
+	Release 1.0
+    		- Initial build
