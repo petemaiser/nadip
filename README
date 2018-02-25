@@ -1,47 +1,60 @@
+
 The "nadip" command line tool enables the user to copy all the settings from a NAD processor or
-receiver into a setting file that can then be sent to another processor.  Or the setting file
-can be used a backup.  A single command can also be sent on the command-line.
+receiver into a setting file that can then be sent to another processor to "upload" and replace
+all the settings on that processor.  Or the setting file can be used a backup.  A single command
+can also be sent on the command-line.  This program was quickly written in Objective C via
+reusing components from the iOS app DTrol https://itunes.apple.com/us/app/dtrol/id1296670853
+
+This program is comes with NO WARRANTY and is a beta version.
+You use this program at your own risk.
+
+Copyright (C) 2018 Pete Maiser.
 
 Usage:  
-	nadip [-p <put file>] [-s <settings file] [-l <log file>] <IP> <port> [<command string>]
+    nadip  [-l log_file] [-p put_file] [-s settings_file] [-w milliseconds] IP_address IP_port [put_command_string]
 
-	-p	Option to put all the commands to the server from the put file.
-		Note that a line that starts with '#' is skipped
-		Except '#!', which is a put file command.
+    -l  Option for all received commands to be appended to a log file.  The log file is
+        different from settings file in that it logs everything received from the processor,
+        no more, no less.  The log file records for a brief time period second after nadip has
+        sent its last command.  If neither the 'l' option or the 's' option is used the
+        responses will be discarded.
 
-		Supported '#!' commands are:
+    -p	Option to put all the commands to the server from the put file.
+        Note that a line that starts with '#' is skipped, except '#!', which is a put file
+        command.  If option 'p' is not used then a put command must be supplied as the last
+        argument.  Supported '#!' commands are:
 
-			  #!p<milliseconds>	pause for the given milliseconds,
-						e.g. "#!500" pauses for half a second
+            #!p<milliseconds>   pause for the given milliseconds,
+                                e.g. "#!500" pauses for half a second
 
-	-s	Option to turn the responses into a settings file.  NAD responses like
-		"Main.Power=On" can be sent as commands, so the settings option simple takes the
-		responses from a command or put file and saves them to the settings file.  Note
-		that put file commands like '#!p' are moved over to the settings file.  The 's'
-		option must be run with the 'p' option OR with a single command sent as an
-		argument.  The log file records for 1 second after nadip has sent its last command.
-		Responses that are not settings are skipped:
+    -s	Option to appended the responses to a settings file.  NAD responses like
+        "Main.Power=On" can be sent as commands, so the settings option simple takes the
+        responses from a command or put file and saves them to the settings file.  Note
+        that put file commands like '#!p' are moved over to the settings file.  The 's'
+        option must be run with the 'p' option OR with a single command sent as an
+        argument.  If neither the 'l' option or the 's' option is used the responses will be
+        discarded.  The log file records for a brief time period second after nadip has sent
+        its last command.  Responses that are not settings are skipped:
 
-			Main.Model			Main.Version			Main.Serial
+            Main.Model            Main.Version            Main.Serial
 
-	-l	Option for all received commands to be written to a log file.  The log file is
-		different from settings file in that it logs everything received from the
-		processor, no more, no less.  The log file records for 1 second after nadip has sent
-		its last command.
+    -w  Option to wait for the given seconds after one command and before starting the
+        next command.  For Release 1, when using putting a "settings" file to NAD processor it
+        is recommended to use the 'w'option with '50' to put 50 milliseconds between commands.
 
-	<IP>	The IP address, e.g. "10.0.1.10" is the first argument and must be supplied
+    IP_address	The IP address, e.g. "10.0.1.10" is the first argument and must be supplied
 
-	<Port>	The port number, e.g. '4999' is the second argument and must be supplied
+    IP_port 	The port number, e.g. '4999' is the second argument and must be supplied
 
-	<command string>
-		An optional command string will be sent to the processor.  If a put file is also
-		included the put file commands will be run first.
-
-
-This program is comes with NO WARRANTY and is a beta version.  You use it at your own risk.
-Copyright (C) 2018 Pete Maiser.
+    put_command_string  An optional command string will be sent to the processor.  If a put file
+        is also included the put file commands will be run first.  If no command string is
+        supplied then the 'p' command must be used.
   
 Release Updates:
 
-	Release 1.0
-    		- Initial build
+    Release 1.0
+        - Initial build.  The program does not at this time enable validated feedback for the
+          any send commands.  When creating a 'settings file it records what it receives within
+          a brief time period after executing all commands.
+        - When using putting a "settings" file to NAD processor it is recommended to use the 'w'
+          option with '50' to put 50 milliseconds between commands.

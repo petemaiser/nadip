@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B552F94B2041C3760051D05B /* NSString+ResponseString.m in Sources */ = {isa = PBXBuildFile; fileRef = B552F94A2041C3760051D05B /* NSString+ResponseString.m */; };
+		B5B5509E2031113800039AC5 /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B5509C2031113700039AC5 /* ServerController.m */; };
+		B5B550A3203113CE00039AC5 /* Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B550A2203113CE00039AC5 /* Handler.m */; };
+		B5B550A6203113F800039AC5 /* LogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B550A5203113F800039AC5 /* LogHandler.m */; };
+		B5B550A92031140A00039AC5 /* SettingsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B550A82031140A00039AC5 /* SettingsHandler.m */; };
+		B5B550AF2031157B00039AC5 /* PutController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B550AE2031157B00039AC5 /* PutController.m */; };
+		B5B550B22031159D00039AC5 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B550B12031159D00039AC5 /* Controller.m */; };
 		B5D6D57D2030F8810006A399 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D6D57C2030F8810006A399 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +30,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B552F9492041C3750051D05B /* NSString+ResponseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ResponseString.h"; sourceTree = "<group>"; };
+		B552F94A2041C3760051D05B /* NSString+ResponseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ResponseString.m"; sourceTree = "<group>"; };
+		B552F94D204236E10051D05B /* query.T175.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = query.T175.txt; sourceTree = "<group>"; };
+		B5B5509C2031113700039AC5 /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
+		B5B5509D2031113700039AC5 /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
+		B5B550A1203113CE00039AC5 /* Handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Handler.h; sourceTree = "<group>"; };
+		B5B550A2203113CE00039AC5 /* Handler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Handler.m; sourceTree = "<group>"; };
+		B5B550A4203113F800039AC5 /* LogHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogHandler.h; sourceTree = "<group>"; };
+		B5B550A5203113F800039AC5 /* LogHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogHandler.m; sourceTree = "<group>"; };
+		B5B550A72031140A00039AC5 /* SettingsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsHandler.h; sourceTree = "<group>"; };
+		B5B550A82031140A00039AC5 /* SettingsHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsHandler.m; sourceTree = "<group>"; };
+		B5B550AD2031157B00039AC5 /* PutController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PutController.h; sourceTree = "<group>"; };
+		B5B550AE2031157B00039AC5 /* PutController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PutController.m; sourceTree = "<group>"; };
+		B5B550B02031159D00039AC5 /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		B5B550B12031159D00039AC5 /* Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		B5D6D5792030F8810006A399 /* nadip */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nadip; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D6D57C2030F8810006A399 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5D6D5832030FFE70006A399 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
@@ -40,11 +62,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5B5509F2031114200039AC5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5B550B02031159D00039AC5 /* Controller.h */,
+				B5B550B12031159D00039AC5 /* Controller.m */,
+				B5B550AD2031157B00039AC5 /* PutController.h */,
+				B5B550AE2031157B00039AC5 /* PutController.m */,
+				B5B5509D2031113700039AC5 /* ServerController.h */,
+				B5B5509C2031113700039AC5 /* ServerController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5B550A02031115500039AC5 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				B552F9492041C3750051D05B /* NSString+ResponseString.h */,
+				B552F94A2041C3760051D05B /* NSString+ResponseString.m */,
+				B5B550A1203113CE00039AC5 /* Handler.h */,
+				B5B550A2203113CE00039AC5 /* Handler.m */,
+				B5B550A4203113F800039AC5 /* LogHandler.h */,
+				B5B550A5203113F800039AC5 /* LogHandler.m */,
+				B5B550A72031140A00039AC5 /* SettingsHandler.h */,
+				B5B550A82031140A00039AC5 /* SettingsHandler.m */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
 		B5D6D5702030F8810006A399 = {
 			isa = PBXGroup;
 			children = (
 				B5D6D5842030FFE70006A399 /* LICENSE */,
 				B5D6D5832030FFE70006A399 /* README */,
+				B552F94D204236E10051D05B /* query.T175.txt */,
 				B5D6D57B2030F8810006A399 /* nadip */,
 				B5D6D57A2030F8810006A399 /* Products */,
 			);
@@ -61,6 +112,8 @@
 		B5D6D57B2030F8810006A399 /* nadip */ = {
 			isa = PBXGroup;
 			children = (
+				B5B5509F2031114200039AC5 /* Controllers */,
+				B5B550A02031115500039AC5 /* Handlers */,
 				B5D6D57C2030F8810006A399 /* main.m */,
 			);
 			path = nadip;
@@ -124,6 +177,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D6D57D2030F8810006A399 /* main.m in Sources */,
+				B5B550AF2031157B00039AC5 /* PutController.m in Sources */,
+				B5B550B22031159D00039AC5 /* Controller.m in Sources */,
+				B5B550A3203113CE00039AC5 /* Handler.m in Sources */,
+				B5B550A6203113F800039AC5 /* LogHandler.m in Sources */,
+				B552F94B2041C3760051D05B /* NSString+ResponseString.m in Sources */,
+				B5B5509E2031113800039AC5 /* ServerController.m in Sources */,
+				B5B550A92031140A00039AC5 /* SettingsHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

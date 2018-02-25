@@ -1,0 +1,89 @@
+#######################################################
+#####         nadip query file (put file)         #####
+#####                SAMPLE FILE                  #####
+#####  for NAD T175, NAD T175HD, and many others  #####
+#######################################################
+#
+##### Turn off Zones first #####
+Main.Power=Off
+Zone2.Power=Off
+Zone3.Power=Off
+Zone4.Power=Off
+#!p750
+##### Zones #####
+Main?
+#!p750
+Zone2?
+Zone3?
+Zone4?
+#!p500
+##### Sources #####
+Source1?
+Source2?
+Source3?
+Source4?
+Source5?
+#!p500
+Source6?
+Source7?
+Source8?
+Source9?
+Source10?
+#!p500
+##### Presets #####
+Preset1?
+#!p750
+Preset2?
+#!p750
+Preset3?
+#!p750
+Preset4?
+#!p750
+Preset5?
+#!p750
+##### Tuner Presets #####
+Tuner.Preset1?
+Tuner.Preset2?
+Tuner.Preset3?
+Tuner.Preset4?
+Tuner.Preset5?
+Tuner.Preset6?
+Tuner.Preset7?
+Tuner.Preset8?
+Tuner.Preset9?
+Tuner.Preset10?
+#!p500
+Tuner.Preset11?
+Tuner.Preset12?
+Tuner.Preset13?
+Tuner.Preset14?
+Tuner.Preset15?
+Tuner.Preset16?
+Tuner.Preset17?
+Tuner.Preset18?
+Tuner.Preset19?
+Tuner.Preset20?
+#!p500
+Tuner.Preset21?
+Tuner.Preset22?
+Tuner.Preset23?
+Tuner.Preset24?
+Tuner.Preset25?
+Tuner.Preset26?
+Tuner.Preset27?
+Tuner.Preset28?
+Tuner.Preset29?
+Tuner.Preset30?
+#!p500
+Tuner.Preset31?
+Tuner.Preset32?
+Tuner.Preset33?
+Tuner.Preset34?
+Tuner.Preset35?
+Tuner.Preset36?
+Tuner.Preset37?
+Tuner.Preset38?
+Tuner.Preset39?
+Tuner.Preset40?
+#!p500
+#######################################################
