@@ -25,13 +25,16 @@ Program Usage:
     nadip  [-l log_file] [-p put_file] [-s settings_file]
            [-w milliseconds] IP_address IP_port [put_command_string]
 
-    -l  Option for all received commands to be appended to a log file.  The log file is
+    example
+    ../nadip -l settings.tuner.log -p settings.tuner.txt -w 50 192.168.0.90 4999
+
+    -l  Option for all received data to be appended to a provided log filename.  The log file is
         different from settings file in that it logs everything received from the processor,
-        no more, no less.  The log file records for a brief time period second after nadip has
-        sent its last command.  If neither the 'l' option or the 's' option is used the
+        no more, no less.  The log file 'records' for a brief time period after nadip has
+        sent its last command.  If neither the 'l' option or the 's' option is used
         responses will be discarded.
 
-    -p	Option to put all the commands to the server from the put file.
+    -p	Option to put all the commands to the server from the provided put filename.
         Note that a line that starts with '#' is skipped, except '#!', which is a put file
         command.  If option 'p' is not used then a put command must be supplied as the last
         argument.  Supported '#!' commands are:
@@ -39,20 +42,20 @@ Program Usage:
             #!p<milliseconds>   pause for the given milliseconds,
                                 e.g. "#!500" pauses for half a second
 
-    -s	Option to appended the responses to a settings file.  NAD responses like
-        "Main.Power=On" can be sent as commands, so the settings option simple takes the
-        responses from a command or put file and saves them to the settings file.  Note
+    -s	Option to appended the responses to a provided settings filename.  NAD responses like
+        "Main.Power=On" can be sent as commands, so the settings option simply takes the
+        responses from recieved data or put file and saves them to the settings file.  Note
         that put file commands like '#!p' are moved over to the settings file.  The 's'
         option must be run with the 'p' option OR with a single command sent as an
         argument.  If neither the 'l' option or the 's' option is used the responses will be
         discarded.  The log file records for a brief time period second after nadip has sent
-        its last command.  Responses that are not settings are skipped:
+        its last command.  Responses that are skipped (because they are not settings):
 
             Main.Model
             Main.Version
             Main.Serial
 
-    -w  Option to wait for the given seconds after one command and before starting the
+    -w  Option to wait for provided seconds after one command and before starting the
         next command.  For Release 1, when using putting a "settings" file to NAD processor it
         is recommended to use the 'w'option with '50' to put 50 milliseconds between commands.
 
@@ -67,8 +70,8 @@ Program Usage:
 Release Updates:
 
     Release 1.0
-        - Initial build.  The program does not at this time enable validated feedback for the
-          any send commands.  When creating a 'settings file it records what it receives within
+        - Initial build.  The program does not enable validated feedback for
+          any send commands.  When creating a 'settings' file it records data received within
           a brief time period after executing all commands.
-        - When using putting a "settings" file to NAD processor it is recommended to use the 'w'
+        - When putting a "settings" file to NAD processor it is recommended to use the 'w'
           option with '50' to put 50 milliseconds between commands.
