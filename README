@@ -10,7 +10,18 @@ You use this program at your own risk.
 
 Copyright (C) 2018 Pete Maiser.
 
-Usage:  
+How to Use:
+- you must compile this program on your computer to run it
+- cd to your desired directory
+- clone project from GitHub via your preferred method
+- then, for example, to compile in Xcode:
+    - “Open a project or file” and open the Xcode file (.xcodeproj)
+    - go to "Product" and "Build for Running"
+    - go to "Show Build Folder in Finder"
+    - navigate to find the compiled program as 'nadip'
+    - copy the program to some more convenience place on your computer
+
+Program Usage:
     nadip  [-l log_file] [-p put_file] [-s settings_file]
            [-w milliseconds] IP_address IP_port [put_command_string]
 
@@ -37,7 +48,9 @@ Usage:
         discarded.  The log file records for a brief time period second after nadip has sent
         its last command.  Responses that are not settings are skipped:
 
-            Main.Model            Main.Version            Main.Serial
+            Main.Model
+            Main.Version
+            Main.Serial
 
     -w  Option to wait for the given seconds after one command and before starting the
         next command.  For Release 1, when using putting a "settings" file to NAD processor it
