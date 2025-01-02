@@ -1,9 +1,10 @@
-
 The "nadip" command line tool enables the user to "download" all the settings from a NAD processor
 or receiver into a nadip settings file that can be "uploaded" to another processor to replace all
 the settings on that processor.  Or the settings file can be saved as a backup.  A single command
-can also be sent on the command-line.  This program was quickly written in Objective C via
-reusing components from the iOS app DTrol https://itunes.apple.com/us/app/dtrol/id1296670853
+can also be sent on the command-line.
+
+This program was quickly written in Objective C via reusing components from the
+iOS app DTrol https://itunes.apple.com/us/app/dtrol/id1296670853
 
 This program is comes with NO WARRANTY and is a beta version.
 You use this program at your own risk.
@@ -71,7 +72,7 @@ Release Updates:
 
     Release 1.0
         - Initial build.  The program does not enable validated feedback for
-          any send commands.  When creating a 'settings' file it records data received within
+          any commands.  When creating a 'settings' file it records data received within
           a brief time period after executing all commands.
         - When putting a "settings" file to NAD processor it is recommended to use the 'w'
           option with '50' to put 50 milliseconds between commands.
